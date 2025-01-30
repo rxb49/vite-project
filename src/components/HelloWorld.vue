@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useMouse, usePreferredDark, useLocalStorage  } from '@vueuse/core'
+import { useMouse, usePreferredDark } from '@vueuse/core'
 
 
 
@@ -12,15 +12,12 @@ const count = ref(0)
 
 // Déclaration d'une variable « observé » de type String
 const input = ref('Votre nom')
-  const { x, y } = useMouse()
 
-  const isDark = usePreferredDark()
+// tracks mouse position
+const { x, y } = useMouse()
 
-  const modal = ref(false)
-
-const ignoreElRef = ref()
-
-
+// is user prefers dark theme
+const isDark = usePreferredDark()
 
 </script>
 
@@ -40,15 +37,6 @@ const ignoreElRef = ref()
     <h2>hello « {{ input }} » {{ x }}, {{ y }}</h2>
     <input v-model="input" />
   </div>
-
-  <button @click="modal = true">
-    Open Modal
-  </button>
-
-  <div ref="ignoreElRef">
-    click outside ignore element
-  </div>
-
 
 </template>
 
