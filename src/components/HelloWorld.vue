@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useMouse, usePreferredDark } from '@vueuse/core'
+import { useMouse, usePreferredDark, useLocalStorage  } from '@vueuse/core'
 
 
 
@@ -12,10 +12,8 @@ const count = ref(0)
 
 // Déclaration d'une variable « observé » de type String
 const input = ref('Votre nom')
-  // tracks mouse position
   const { x, y } = useMouse()
 
-  // is user prefers dark theme
   const isDark = usePreferredDark()
 
   const modal = ref(false)
@@ -27,6 +25,7 @@ const ignoreElRef = ref()
 </script>
 
 <template>
+  {{ x }}, {{ y }}
   <div v-if="isDark">Dark mode</div>
   <div v-else>Light mode</div>
   <h1>{{ msg }}</h1>
