@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useMouse, usePreferredDark } from '@vueuse/core'
+import { useMouse } from '@vueuse/core'
 
 
 
@@ -16,21 +16,18 @@ const input = ref('Votre nom')
 // tracks mouse position
 const { x, y } = useMouse()
 
-// is user prefers dark theme
-const isDark = usePreferredDark()
+
+
 
 </script>
 
 <template>
-  {{ x }}, {{ y }}
-  <div v-if="isDark">Dark mode</div>
-  <div v-else>Light mode</div>
   <h1>{{ msg }}</h1>
 
   <div class="card">
-    <button type="button" @click="count--">--</button>
+    <button type="button" @click="count--">-</button>
     <button type="button">{{ count }}</button>
-    <button type="button" @click="count++">++</button>
+    <button type="button" @click="count++">+</button>
   </div>
 
   <div class="card">
@@ -42,9 +39,9 @@ const isDark = usePreferredDark()
 
 <style scoped>
 .card {
-  background: #595959;
+  background: #bdbdbd;
   border: 1px solid #ccc;
-  border-radius: 2px;
+  border-radius: 10px;
   margin: 10px;
 }
 </style>

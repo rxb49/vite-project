@@ -1,17 +1,20 @@
 <script setup lang="ts">
+import Author from './components/Author.vue';
+import Test from './components/Test.vue';
 import HelloWorld from './components/HelloWorld.vue'
+import Card from "./components/card.vue";
+import progressButton from './components/progressButton.vue';
+import navBar from './components/navBar.vue';
+
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
+  <navBar />
   <HelloWorld msg="Vite + Vue" />
+  <Author />
+  <Test />
+  <card> Contenu de ma Card </card>
+  <progressButton> Click </progressButton>
 </template>
 
 <style scoped>
@@ -21,10 +24,5 @@ import HelloWorld from './components/HelloWorld.vue'
   will-change: filter;
   transition: filter 300ms;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+
 </style>
